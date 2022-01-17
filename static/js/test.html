@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="myBox"> Testing Full Screen</div>
+
+    <button onclick="resProduct();">Click Me</button>
+    <div id="butto"></div>
+    <div id="butto2"></div>
+
+
+
+
+
+
+    <style>
+        #myBox {
+            width: 100px;
+            height: 75%;
+            background: rgb(100, 200, 200);
+            padding: 20px;
+        }
+    </style>
+
+
+    <script src="test.js"></script>
+    <script src="strings-sub.js"></script>
+
+    <script>
+        function getFullscreenElement() {
+            return document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullscreenElement ||
+                document.mozFullscreenElement;
+        }
+
+
+        function toggleFullscreen() {
+            if (getFullscreenElement()) {
+                document.exitFullscreen();
+            } else {
+                //document.documentElement.requestFullscreen().catch(console.log);
+                document.getElementById("myBox").requestFullscreen().catch(console.log);
+
+            }
+        }
+
+
+        document.addEventListener("dblclick", () => {
+            toggleFullscreen();
+        });
+    </script>
+
+
+</body>
+
+</html>

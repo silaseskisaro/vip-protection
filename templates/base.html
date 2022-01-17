@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static tailwind_tags %} {% load static %}
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+    {% tailwind_css %}
+
+</head>
+
+<body class="h-full bg-blue-300">
+
+    <!------------- start homepage divisions ---------->
+    <div class="flex">
+        <div class="flex">
+
+
+            <!----------topbar division------------------->
+            <div class="flex">
+                <div class=" rounded-lg absolute left-14 mt-4 mr-4 right-0 p-4 bg-gray-800">
+                    {% include 'view/topbar1.html' %}
+                </div>
+            </div>
+
+
+            <!-----------------asidebar division-------->
+
+            <div class="flex">
+                <div class="flex justify-start flex-row rounded-lg  p-4 h-screen bg-gray-200">
+                    {% include 'view/sidebar1.html' %}
+                </div>
+            </div>
+            <!-------------------Another section here---------------------->
+            <div>
+                <div></div>
+            </div>
+
+
+
+
+            <!-------------------Main section here---------------------->
+            <div class="flex flex-col place-content-center w-screen h-fit ">
+                <div class="rounded-md bg-red-300 p-4">
+
+                    {% block content %}{% endblock content %}
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-------------------Footer section here---------------------->
+            <div>
+                <div class="mt-auto bg-black py-4 h-10 w-11">
+                    {% include 'view/footer.html' %}
+                </div>
+            </div>
+
+            <!-------------------End footer section here---------------------->
+            <script src="{% static 'js/homepage.js' %}">
+            </script>
+        </div>
+    </div>
+    <!-------------------End homepage section here---------------------->
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+{% extends 'basehalf.html' %} {% block content %}
+<figure class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:flex dark:bg-gray-800 hover:">
+    <div class="flex justify-center bg-gray-400 rounded-lg p-10 shadow-xl border">
+
+        <div class="p-2 bg-blue-400 rounded-md shadow-lg ">
+
+            <form class="" method="POST">
+                {% csrf_token %}
+                <p class="font-bold text-center">
+                    Registration
+                </p>
+
+                <div class=" mt-4" data-validate="First Name is required ">
+                    <span class="float-left pt-3 ">First Name</span>
+                    <!-- <input class="input100 " type="email " name="email " placeholder="Type your email "> -->
+
+                    <span class="float-right">{{ form.firstname }}</span>
+                </div>
+
+
+
+                <div class=" " data-validate="Last Name is required ">
+                    <span class=" float-left pt-4 ">Last Name</span>
+                    <!-- <input class="input100 " type="email " name="email " placeholder="Type your email "> -->
+                    <span class="float-right">{{ form.lastname }}</span>
+                </div>
+
+                <div class="" data-validate="Username is required ">
+                    {% if error %}
+                    <p style="color: red; ">{{ error }}</p>
+                    {% endif %}
+                    <span class="float-left pt-4">Username</span>
+                    <!-- <input class="input100 " type="text " name="username " placeholder="Type your username "> -->
+
+                    <span class="float-right">{{ form.username }}</span>
+                </div>
+
+
+                <div class=" " data-validate="Email is required ">
+                    <span class="float-left pt-4">Email Address</span>
+                    <!-- <input class="input100 " type="email " name="email " placeholder="Type your email "> -->
+
+                    <span class="float-right">{{ form.email }}</span>
+                </div>
+
+                <div class="" data-validate="Password is required ">
+                    <span class="float-left pt-5">Password</span>
+                    <!-- <input class="input100 " type="password " name="pass " placeholder="Type your password "> -->
+
+                    <span class=" float-right">{{ form.password }}</span>
+                </div>
+
+                <div class=" " data-validate="Password is required ">
+                    <span class="float-left pt-5">Confirm password</span>
+                    <!-- <input class="input100 " type="password " name="conf-pass " placeholder="Type your password again "> -->
+
+                    <span class="float-right">{{ form.confirm_password }}</span>
+                </div>
+
+                <!-- <div class="text-right p-t-8 p-b-31 ">
+					<a href="# ">
+						Forgot password?
+					</a>
+				</div> -->
+
+
+
+                <div class=" px-5 pl-10  py-9 text-center">
+                    <span class=""><button class=" pl-10  mx-10 px-10 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-900 ">
+                    Create
+                    </button></span>
+                </div>
+
+
+
+                <div class="position-relative text-center ">
+
+                    <a href="{% url 'signin' %} " class="px-8 m-6 text-blue-600 hover:underline hover:font-extrabold ">
+                                    Login
+                                </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</figure>
+
+
+<div id="dropDownSelect1 "></div>
+{% endblock %}
