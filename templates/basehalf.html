@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static tailwind_tags %} {% load static %}
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+    {% tailwind_css %}
+
+</head>
+
+<body class="bg-cover  bg-[url('../../images/background2.jpg')]">
+    {% block content %} {% endblock %}
+</body>
+
+</html>
